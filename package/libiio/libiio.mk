@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-LIBIIO_VERSION = 0.21
+LIBIIO_VERSION = 0.23
 LIBIIO_SITE = $(call github,analogdevicesinc,libiio,v$(LIBIIO_VERSION))
 
 #LIBIIO_VERSION = 60063cb20312c2f06cb8b33e8692e4a0a3546738
@@ -75,7 +75,7 @@ ifeq ($(BR2_PACKAGE_LIBIIO_BINDINGS_PYTHON),y)
 ifeq ($(BR2_PACKAGE_PYTHON),y)
 LIBIIO_DEPENDENCIES += python
 else ifeq ($(BR2_PACKAGE_PYTHON3),y)
-LIBIIO_DEPENDENCIES += python3
+LIBIIO_DEPENDENCIES += python3 host-python-setuptools-scm
 endif
 LIBIIO_CONF_OPTS += -DPYTHON_BINDINGS=ON
 else
